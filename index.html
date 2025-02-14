@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title style="font-family: Arial, Helvetica, sans-serif;">Humanoid Locomotion</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Open Graph data  TODO: modify this later-->
+    <meta property="og:image" content="img/cover.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lipschitz-constrained-policy.github.io"/>
+    <meta property="og:title" content="Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies" />
+    <meta property="og:description" content="We propose a straightforward algorithm to train general locomotion controllers for multiple humanoid robots." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies" />
+    <meta name="twitter:description" content="We propose a straightforward algorithm to train general locomotion controllers for multiple humanoid robots." />
+    <meta name="twitter:image" content="img/cover.jpg" />
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+    <link rel="icon" href="./favicon.ico">
+
+</head>
+
+<body>
+    <div id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center" style="font-size: 36px; font-family: 'Georgia', 'Times New Roman', serif;">
+                Learning Smooth Humanoid Locomotion <br> through Lipschitz-Constrained Policies </br>
+            </h2>
+        </div> <br>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://zixuan417.github.io" style="font-size: 18px;">
+                         Zixuan Chen
+                        </a>
+                        <sup style="font-size: 14px;">*,1</sup>
+                    </li>
+                    <li>
+                        <a href="https://xialin-he.github.io" style="font-size: 18px;">
+                            Xialin He
+                        </a>
+                        <sup style="font-size: 14px;">*,2</sup>
+                    </li>
+                    <li>
+                        <a href="https://wangyenjen.github.io" style="font-size: 18px;">
+                          Yen-Jen Wang
+                        </a>
+                        <sup style="font-size: 14px;">*,3</sup>
+                    </li>
+                    <li>
+                        <a href="https://qiayuanl.netlify.app" style="font-size: 18px;">
+                          Qiayuan Liao
+                        </a>
+                        <sup style="font-size: 14px;">3</sup>
+                    </li>
+                    <li>
+                        <a href="https://yanjieze.com" style="font-size: 18px;">
+                          Yanjie Ze
+                        </a>
+                        <sup style="font-size: 14px;">4</sup>
+                        <!-- </br>Google -->
+                    </li>
+                    <li>
+                        <a href="https://zyliatzju.github.io" style="font-size: 18px;">
+                          Zhongyu Li
+                        </a>
+                        <sup style="font-size: 14px;">3</sup>
+                    </li><br>
+                    <li>
+                        <a href="https://people.eecs.berkeley.edu/~sastry/" style="font-size: 18px;">
+                          S. Shankar Sastry
+                        </a>
+                        <sup style="font-size: 14px;">3</sup>
+                    </li>
+                    <li>
+                        <a href="https://jiajunwu.com" style="font-size: 18px;">
+                          Jiajun Wu
+                        </a>
+                        <sup style="font-size: 14px;">4</sup>
+                    </li>
+                    <li>
+                        <a href="https://me.berkeley.edu/people/koushil-sreenath/" style="font-size: 18px;">
+                          Koushil Sreenath
+                        </a>
+                        <sup style="font-size: 14px;">3</sup>
+                    </li>
+                    <li>
+                        <a href="http://saurabhg.web.illinois.edu" style="font-size: 18px;">
+                          Saurabh Gupta
+                        </a>
+                        <sup style="font-size: 14px;">2</sup>
+                    </li>
+                    <li>
+                        <a href="https://xbpeng.github.io" style="font-size: 18px;">
+                          Xue Bin Peng
+                        </a>
+                        <sup style="font-size: 14px;">1</sup>
+                    </li><br>
+                    <li>
+                        <sup style="font-size: 14px;">1</sup><font size="4">Simon Fraser University</font>
+                    </li>
+                    <li>
+                        <sup style="font-size: 14px;">2</sup><font size="4">UIUC</font>
+                    </li>
+                    <li>
+                        <sup style="font-size: 14px;">3</sup><font size="4">UC Berkeley</font>
+                    </li>
+                    <li>
+                        <sup style="font-size: 14px;">4</sup><font size="4">Stanford University</font>
+                    </li><br>
+                    <li>
+                        <sup style="font-size: 14px;">*</sup><font size="4">Equal contribution</font>
+                    </li><br>
+                    <!-- <li>
+                       <font size="5">CoRL 2024</font>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://lipschitz-constrained-policy.github.io">
+                            <image src="img/paper-cover.jpeg" height="50px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://lipschitz-constrained-policy.github.io">
+                            <image src="img/github.png" height="50px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://lipschitz-constrained-policy.github.io">
+                            <image src="img/youtube_icon.png" height="50px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="https://b23.tv/EZEa0LS">
+                            <image src="img/bilibili.jpeg" height="50px">
+                                <h4><strong>Bilibili</strong></h4>
+                            </a>
+                        </li> -->
+                        <!-- <li>
+                            <a href="https://twitter.com/xiaolonw/status/1772667935850635370">
+                            <image src="img/twitter.png" height="50px">
+                                <h4><strong>Twitter</strong></h4>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://www.youtube.com/embed/Kfj1ImFLoqI?si=bg1q94q0zv41COTD" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <!-- <div class="poster-image" style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('img/youtube_cover.jpg');background-size:cover;background-position:center;display:block;"></div> -->
+            </div>
+                    </div>
+                </div>
+            </div> <br>
+            <div class="col-md-8 col-md-offset-2">
+                    <p class="text-center" style="font-size: 16px;">
+                    We propose a straightforward algorithm to train general locomotion controllers for multiple humanoid robots.
+                    </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 style="font-size: 36px; font-weight: bold; text-align:center">
+                    Abstract
+                </h3>
+                <p class="text-justify" style="font-size: 18px;">
+                    Reinforcement learning combined with sim-to-real transfer offers a general framework for developing locomotion controllers for legged robots. To facilitate successful deployment in the real world, smoothing techniques, such as low-pass filters and smoothness rewards, are often employed to develop policies with smooth behaviors. However, because these techniques are non-differentiable and usually require tedious tuning of a large set of hyperparameters, they tend to require extensive manual tuning for each robotic platform.
+                    To address this challenge and establish a general technique for enforcing smooth behaviors, we propose a simple and effective method that imposes a Lipschitz constraint on a learned policy, which we refer to as Lipschitz-Constrained Policies (LCP). We show that the Lipschitz constraint can be implemented in the form of a gradient penalty, which provides a differentiable objective that can be easily incorporated with automatic differentiation frameworks. We demonstrate that LCP effectively replaces the need for smoothing rewards or low-pass filters and can be easily integrated into training frameworks for many distinct humanoid robots. We extensively evaluate LCP in both simulation and real-world humanoid robots, producing smooth and robust locomotion controllers.
+                </p>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 100px; margin-left: 5px;">
+            <h3 class="col-md-8 col-md-offset-2" style="font-size: 32px; font-weight: bold; text-align:center; margin-bottom: 50px;">
+                General Locomotion Framework
+            </h3>
+            <div class="col-md-8 col-md-offset-2">
+                <p class="text-justify" style="font-size: 16px;">
+            With our method (LCP), we are able to develop a framework that can be generally utilized to train distinc humanoid robots.</p></div>
+            <div class="text-center" style="column-gap: 40px; line-height: 50px;">
+                <video id="main-walk1" width="34%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/sec1/t1-grass-final0.mp4" type="video/mp4" />
+                </video>&nbsp;&nbsp;&nbsp;&nbsp;
+                <video id="main-walk2" width="34%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/sec1/t2-outdoor-long-scene3.mp4" type="video/mp4" />
+                </video><br>
+                <video id="main-walk3" width="34%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/sec1/berkeley-grass-1.mp4" type="video/mp4" />
+                </video>&nbsp;&nbsp;&nbsp;&nbsp;
+                <video id="main-walk4" width="34%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/sec1/h1-plane.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 100px;">
+            <h3 class="col-md-8 col-md-offset-2" style="font-size: 32px; font-weight: bold; text-align:center; margin-bottom: 50px;">
+                More Examples
+            </h3>
+            <div class="col-md-12 text-center" style="column-gap: 40px; line-height: 50px">
+                    <video id="6" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id6_t2_outdoor6_process.mp4" type="video/mp4" />
+                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <video id="11" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id11-h1-roll.mp4" type="video/mp4" />
+                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <video id="8" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id8-berkeley-passage1-process.mp4" type="video/mp4" />
+                    </video><br>
+                    <video id="8" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id8-berkeley-passage1-process.mp4" type="video/mp4" />
+                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <video id="9" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id9-berkeley-roll1-process.mp4" type="video/mp4" />
+                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <video id="4" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id4_t2_outdoor1-process.mp4" type="video/mp4" />
+                    </video><br>
+                    <video id="5" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id5_t2_outdoor5_process.mp4" type="video/mp4" />
+                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <video id="7" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id7-t2_outdoor7_process.mp4" type="video/mp4" />
+                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <video id="10" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id10-berkeley-roll2-process.mp4" type="video/mp4" />
+                    </video><br>
+                    <video id="outdoor_vision" width="15%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/external-force/t2-external-mosaic.mp4" type="video/mp4" />
+                    </video>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <video id="1" width="15%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id1-t1-indoor-rough-process.mp4" type="video/mp4" />
+                    </video>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <video id="3" width="15%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id3-t2_indoor3_rough_process.mp4" type="video/mp4" />
+                    </video>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <video id="2" width="15%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/more-examples/id2-t2_indoor2-process.mp4" type="video/mp4" />
+                    </video>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <video id="indoor_vision_chair" width="15%" style="border-radius: 10px;" autoplay loop muted controls>
+                        <source src="img/videos/external-force/t1-external-final.mp4" type="video/mp4" />
+                    </video>
+            </div>
+        </div>
+
+        <!-- <div class="row" style="margin-top: 100px; margin-left: 5px;">
+            <h3 class="col-md-8 col-md-offset-2" style="font-size: 32px; font-weight: bold; text-align:center; margin-bottom: 50px;">
+                External Forces
+            </h3>
+            <div class="text-center" style="column-gap: 40px; line-height: 50px;">
+                <video id="indoor_vision_chair" width="18%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/external-force/t1-external-final.mp4" type="video/mp4" />
+                </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <video id="outdoor_vision" width="18%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/external-force/t2-external-mosaic.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div> -->
+
+        <div class="row" style="margin-top: 100px;">
+            <h3 class="col-md-8 col-md-offset-2" style="font-size: 32px; font-weight: bold; text-align:center; margin-bottom: 50px;">
+                Sim-to-Sim Performance
+            </h3>
+            <div class="col-md-12 text-center" style="column-gap: 40px; line-height: 30px">
+                <div class="col-md-8 col-md-offset-2">
+                <p class="text-justify" style="font-size: 16px;">
+                The trained policies are tested in Mujoco.</p></div>
+                <!-- <video id="f2" width="33%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/sim/lowlevel.mp4" type="video/mp4" />
+                </video>
+                <video id="f2" width="33%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/sim/highlevel.mov" type="video/mp4" />
+                </video> -->
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 100px;">
+            <h3 class="col-md-8 col-md-offset-2" style="font-size: 32px; font-weight: bold; text-align:center; margin-bottom: 50px;">
+                Failure Cases
+            </h3>
+            <div class="col-md-12 text-center" style="column-gap: 40px; line-height: 50px">
+                    <!-- <div class="col-md-8 col-md-offset-2">
+                    <p class="text-justify" style="font-size: 15px;">
+                The robot may fail due to several reasons, like the failure of the depth perception, the lost of the tracking mask, the inproper design of the Z1 gripper, and also generalization error.<br>
+                </p></div> -->
+                <!-- <video id="f1" width="24%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/failure-case/depth-fail-comp.mp4" type="video/mp4" />
+                </video>&nbsp;&nbsp;&nbsp;&nbsp;
+                <video id="f2" width="24%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/failure-case/tracking-fail-comp.mp4" type="video/mp4" />
+                </video>&nbsp;&nbsp;&nbsp;&nbsp;
+                <video id="f2" width="24%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/failure-case/box-fail-comp.mp4" type="video/mp4" />
+                </video> -->
+                <video id="f1" width="24%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/failure-case/t1-fail1.mp4" type="video/mp4" />
+                </video>&nbsp;&nbsp;&nbsp;&nbsp;
+                <video id="f2" width="24%" style="border-radius: 10px;" autoplay loop muted controls>
+                    <source src="img/videos/failure-case/berkeley-fail1.mp4" type="video/mp4" />
+                </video>
+            </div>
+
+        <div class="row" style="margin-top: 100px;">
+        </div>
+
+        <section class="section" id="BibTeX">
+            <div class="container content">
+                <h3 class="titile" style="font-family: 'Georgia', 'Times New Roman', serif;">BibTeX</h3>
+                <pre><code>
+                    TBD
+<!-- @article{liu2024visual,
+title={Visual Whole-Body Control for Legged Loco-Manipulation},
+author={Liu, Minghuan and Chen, Zixuan and Cheng, Xuxin and Ji, Yandong and Qiu, Rizhao and Yang, Ruihan and Wang, Xiaolong},
+journal={CoRL},
+year={2024}
+} -->
+                </code></pre>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
