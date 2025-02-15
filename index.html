@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title style="font-family: Arial, Helvetica, sans-serif;">Humanoid Locomotion</title>
+    <title style="font-family: Arial, Helvetica, sans-serif;">Humanoid Get Up</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,12 +18,12 @@
     <meta property="og:image:height" content="840">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lipschitz-constrained-policy.github.io"/>
-    <meta property="og:title" content="Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies" />
-    <meta property="og:description" content="We propose a straightforward algorithm to train general locomotion controllers for multiple humanoid robots." />
+    <meta property="og:title" content="Learning Getting-Up Policies for Real-World Humanoid Robots" />
+    <meta property="og:description" content="This project presents an RL-based approach that first achieves real-world humanoids getting up from arbitrary lying postures and terrains." />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies" />
-    <meta name="twitter:description" content="We propose a straightforward algorithm to train general locomotion controllers for multiple humanoid robots." />
+    <meta name="twitter:title" content="Learning Getting-Up Policies for Real-World Humanoid Robots" />
+    <meta name="twitter:description" content="This project presents an RL-based approach that first achieves real-world humanoids getting up from arbitrary lying postures and terrains." />
     <meta name="twitter:image" content="img/cover.jpg" />
 
 
@@ -40,14 +40,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
     
     <script src="js/app.js"></script>
-    <link rel="icon" href="./favicon.ico">
+    <link rel="icon" href="./g1_icon.ico">
 
 </head>
 
 <body>
     <div id="main">
         <div class="row">
-            <h2 class="col-md-12 text-center" style="font-size: 36px; font-family: 'Georgia', 'Times New Roman', serif;">
+            <h2 class="col-md-12 text-center" style="font-size: 48px; font-family: 'Georgia', 'Times New Roman', serif;">
                 Learning Getting-Up Policies for Real-World Humanoid Robots </br>
             </h2>
         </div> <br>
@@ -55,86 +55,39 @@
             <div class="col-md-12 text-center">
                 <ul class="list-inline">
                     <li>
-                        <a href="https://zixuan417.github.io" style="font-size: 18px;">
-                         Zixuan Chen
-                        </a>
-                        <sup style="font-size: 14px;">*,1</sup>
-                    </li>
-                    <li>
-                        <a href="https://xialin-he.github.io" style="font-size: 18px;">
+                        <a href="https://xialin-he.github.io" style="font-size: 26px;">
                             Xialin He
                         </a>
-                        <sup style="font-size: 14px;">*,2</sup>
+                        <sup style="font-size: 20px;">*1</sup>
                     </li>
                     <li>
-                        <a href="https://wangyenjen.github.io" style="font-size: 18px;">
-                          Yen-Jen Wang
+                        <a href="https://runpeidong.web.illinois.edu/" style="font-size: 26px;">
+                         Runpei Dong
                         </a>
-                        <sup style="font-size: 14px;">*,3</sup>
+                        <sup style="font-size: 20px;">*1</sup>
                     </li>
                     <li>
-                        <a href="https://qiayuanl.netlify.app" style="font-size: 18px;">
-                          Qiayuan Liao
+                        <a href="https://zixuan417.github.io" style="font-size: 26px;">
+                         Zixuan Chen
                         </a>
-                        <sup style="font-size: 14px;">3</sup>
+                        <sup style="font-size: 20px;">2</sup>
                     </li>
                     <li>
-                        <a href="https://yanjieze.com" style="font-size: 18px;">
-                          Yanjie Ze
-                        </a>
-                        <sup style="font-size: 14px;">4</sup>
-                        <!-- </br>Google -->
-                    </li>
-                    <li>
-                        <a href="https://zyliatzju.github.io" style="font-size: 18px;">
-                          Zhongyu Li
-                        </a>
-                        <sup style="font-size: 14px;">3</sup>
-                    </li><br>
-                    <li>
-                        <a href="https://people.eecs.berkeley.edu/~sastry/" style="font-size: 18px;">
-                          S. Shankar Sastry
-                        </a>
-                        <sup style="font-size: 14px;">3</sup>
-                    </li>
-                    <li>
-                        <a href="https://jiajunwu.com" style="font-size: 18px;">
-                          Jiajun Wu
-                        </a>
-                        <sup style="font-size: 14px;">4</sup>
-                    </li>
-                    <li>
-                        <a href="https://me.berkeley.edu/people/koushil-sreenath/" style="font-size: 18px;">
-                          Koushil Sreenath
-                        </a>
-                        <sup style="font-size: 14px;">3</sup>
-                    </li>
-                    <li>
-                        <a href="http://saurabhg.web.illinois.edu" style="font-size: 18px;">
+                        <a href="http://saurabhg.web.illinois.edu" style="font-size: 26px;">
                           Saurabh Gupta
                         </a>
-                        <sup style="font-size: 14px;">2</sup>
+                        <sup style="font-size: 24px;">1</sup>
+                    </li>
+                    <br>
+                    <li>
+                        <sup style="font-size: 20px;">2</sup><font size="5">University of Illinois Urbana-Champaign</font>
                     </li>
                     <li>
-                        <a href="https://xbpeng.github.io" style="font-size: 18px;">
-                          Xue Bin Peng
-                        </a>
-                        <sup style="font-size: 14px;">1</sup>
-                    </li><br>
-                    <li>
-                        <sup style="font-size: 14px;">1</sup><font size="4">Simon Fraser University</font>
+                        <sup style="font-size: 20px;">1</sup><font size="5">Simon Fraser University</font>
                     </li>
+                    <br>
                     <li>
-                        <sup style="font-size: 14px;">2</sup><font size="4">UIUC</font>
-                    </li>
-                    <li>
-                        <sup style="font-size: 14px;">3</sup><font size="4">UC Berkeley</font>
-                    </li>
-                    <li>
-                        <sup style="font-size: 14px;">4</sup><font size="4">Stanford University</font>
-                    </li><br>
-                    <li>
-                        <sup style="font-size: 14px;">*</sup><font size="4">Equal contribution</font>
+                        <sup style="font-size: 20px;">*</sup><font size="5">Equal contribution</font>
                     </li><br>
                     <!-- <li>
                        <font size="5">CoRL 2024</font>
@@ -149,20 +102,20 @@
                     <ul class="nav nav-pills nav-justified">
                         <li>
                             <a href="https://lipschitz-constrained-policy.github.io">
-                            <image src="img/paper-cover.jpeg" height="50px">
-                                <h4><strong>Paper</strong></h4>
+                            <image src="img/paper-cover.jpeg" height="85px">
+                                <h2><strong>Paper</strong></h2>
                             </a>
                         </li>
                         <li>
                             <a href="https://lipschitz-constrained-policy.github.io">
-                            <image src="img/github.png" height="50px">
-                                <h4><strong>Code</strong></h4>
+                            <image src="img/github.png" height="85px">
+                                <h3><strong>Code</strong></h3>
                             </a>
                         </li>
                         <li>
                             <a href="https://lipschitz-constrained-policy.github.io">
-                            <image src="img/youtube_icon.png" height="50px">
-                                <h4><strong>Video</strong></h4>
+                            <image src="img/youtube_icon.png" height="85px">
+                                <h3><strong>Video</strong></h3>
                             </a>
                         </li>
                         <!-- <li>
@@ -195,7 +148,7 @@
             </div> <br>
             <div class="col-md-8 col-md-offset-2">
                     <p class="text-center" style="font-size: 16px;">
-                    We propose a straightforward algorithm to train general locomotion controllers for multiple humanoid robots.
+                    This project presents an RL-based approach that first achieves real-world humanoids getting up from arbitrary lying postures and terrains.
                     </p>
             </div>
         </div>
@@ -206,99 +159,194 @@
                 <h3 style="font-size: 36px; font-weight: bold; text-align:center">
                     Abstract
                 </h3>
-                <p class="text-justify" style="font-size: 18px;">
-                    Reinforcement learning combined with sim-to-real transfer offers a general framework for developing locomotion controllers for legged robots. To facilitate successful deployment in the real world, smoothing techniques, such as low-pass filters and smoothness rewards, are often employed to develop policies with smooth behaviors. However, because these techniques are non-differentiable and usually require tedious tuning of a large set of hyperparameters, they tend to require extensive manual tuning for each robotic platform.
-                    To address this challenge and establish a general technique for enforcing smooth behaviors, we propose a simple and effective method that imposes a Lipschitz constraint on a learned policy, which we refer to as Lipschitz-Constrained Policies (LCP). We show that the Lipschitz constraint can be implemented in the form of a gradient penalty, which provides a differentiable objective that can be easily incorporated with automatic differentiation frameworks. We demonstrate that LCP effectively replaces the need for smoothing rewards or low-pass filters and can be easily integrated into training frameworks for many distinct humanoid robots. We extensively evaluate LCP in both simulation and real-world humanoid robots, producing smooth and robust locomotion controllers.
+                <p class="text-justify" style="font-size: 26px;">
+                    Automatic fall recovery is a crucial prerequisite before humanoid robots can
+                    be reliably deployed. Hand-designing controllers for getting up is difficult
+                    because of the varied configurations a humanoid can end up in after a fall and
+                    the challenging terrains humanoid robots are expected to operate on. This paper
+                    develops a learning framework to produce controllers that enable humanoid
+                    robots to get up from varying configurations on varying terrains. Unlike
+                    previous successful applications of humanoid locomotion learning, the
+                    getting-up task involves complex contact patterns, which necessitates
+                    accurately modeling the collision geometry and sparser rewards. We address
+                    these challenges through a two-phase approach that follows a curriculum. The
+                    first stage focuses on discovering a good getting-up trajectory under minimal
+                    constraints on smoothness or speed / torque limits. The second stage then
+                    refines the discovered motions into deployable (i.e. smooth and slow) motions
+                    that are robust to variations in initial configuration and terrains. We find
+                    these innovations enable a real-world G1 humanoid robot to get up from two main
+                    situations that we considered: a) lying face up and b) lying face down, both
+                    tested on flat, deformable, slippery surfaces and slopes (e.g., sloppy grass
+                    and snowfield). To the best of our knowledge, this is the first successful
+                    demonstration of learned getting-up policies for human-sized humanoid robots in
+                    the real world. 
                 </p>
             </div>
         </div>
 
-        <div class="row" style="margin-top: 100px; margin-left: 5px;">
-            <h3 class="col-md-8 col-md-offset-2" style="font-size: 32px; font-weight: bold; text-align:center; margin-bottom: 50px;">
-                General Locomotion Framework
-            </h3>
-            <div class="col-md-8 col-md-offset-2">
-                <p class="text-justify" style="font-size: 16px;">
-            With our method (LCP), we are able to develop a framework that can be generally utilized to train distinc humanoid robots.</p></div>
-            <div class="text-center" style="column-gap: 40px; line-height: 50px;">
-                <video id="main-walk1" width="34%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/sec1/t1-grass-final0.mp4" type="video/mp4" />
-                </video>&nbsp;&nbsp;&nbsp;&nbsp;
-                <video id="main-walk2" width="34%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/sec1/t2-outdoor-long-scene3.mp4" type="video/mp4" />
-                </video><br>
-                <video id="main-walk3" width="34%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/sec1/berkeley-grass-1.mp4" type="video/mp4" />
-                </video>&nbsp;&nbsp;&nbsp;&nbsp;
-                <video id="main-walk4" width="34%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/sec1/h1-plane.mp4" type="video/mp4" />
-                </video>
-            </div>
-        </div>
-
-        <div class="row" style="margin-top: 100px;">
-            <h3 class="col-md-8 col-md-offset-2" style="font-size: 32px; font-weight: bold; text-align:center; margin-bottom: 50px;">
-                More Examples
-            </h3>
-            <div class="col-md-12 text-center" style="column-gap: 40px; line-height: 50px">
-                    <video id="6" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id6_t2_outdoor6_process.mp4" type="video/mp4" />
-                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <video id="11" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id11-h1-roll.mp4" type="video/mp4" />
-                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <video id="8" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id8-berkeley-passage1-process.mp4" type="video/mp4" />
-                    </video><br>
-                    <video id="8" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id8-berkeley-passage1-process.mp4" type="video/mp4" />
-                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <video id="9" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id9-berkeley-roll1-process.mp4" type="video/mp4" />
-                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <video id="4" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id4_t2_outdoor1-process.mp4" type="video/mp4" />
-                    </video><br>
-                    <video id="5" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id5_t2_outdoor5_process.mp4" type="video/mp4" />
-                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <video id="7" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id7-t2_outdoor7_process.mp4" type="video/mp4" />
-                    </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <video id="10" width="25%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id10-berkeley-roll2-process.mp4" type="video/mp4" />
-                    </video><br>
-                    <video id="outdoor_vision" width="15%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/external-force/t2-external-mosaic.mp4" type="video/mp4" />
-                    </video>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <video id="1" width="15%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id1-t1-indoor-rough-process.mp4" type="video/mp4" />
-                    </video>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <video id="3" width="15%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id3-t2_indoor3_rough_process.mp4" type="video/mp4" />
-                    </video>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <video id="2" width="15%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/more-examples/id2-t2_indoor2-process.mp4" type="video/mp4" />
-                    </video>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <video id="indoor_vision_chair" width="15%" style="border-radius: 10px;" autoplay loop muted controls>
-                        <source src="img/videos/external-force/t1-external-final.mp4" type="video/mp4" />
+        <!-- <section class="section" id="outdoor">
+            <div class="container is-max-fullhd" style="margin-top: -5em;">
+            <hr width="100%" size="2">
+            <h2 class="title is-3 has-text-centered">Getting Up From Supine Poses (Lying Facing Up)</h2>
+            <div class="columns is-centered">
+            <div class="column">
+                <h2 class="title is-4 has-text-centered">Concrete Path</h2>
+                <div class="columns is-centered">
+                <div class="column content has-text-centered">
+                    <video  controls playsinline height="100%" class="rounded-video">
+                    <source src="./img/videos/faceup/getup2.mp4"
+                            type="video/mp4">
                     </video>
+                </div>
+        
+                </div>
+        
+                <h2 class="title is-4 has-text-centered">Brick Surfaces</h2>
+                <div class="columns is-centered">
+                <div class="column content has-text-centered">
+                    <video  controls playsinline height="100%" class="rounded-video">
+                    <source src="./img/videos/faceup/getup1.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+        
+                </div>
+        
+                <h2 class="title is-4 has-text-centered">Stone Tile</h2>
+                <div class="columns is-centered">
+                <div class="column content has-text-centered">
+                    <video  controls playsinline height="100%" class="rounded-video">
+                    <source src="./img/videos/faceup/getup3.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+        
+                </div>
             </div>
-        </div>
+        
+        
+            <div class="column">
+                <h2 class="title is-4 has-text-centered">Muddy Grass</h2>
+                <div class="columns is-centered">
+                <div class="column content has-text-centered">
+                    <video  controls playsinline height="100%" class="rounded-video">
+                    <source src="./img/videos/faceup/getup5.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+        
+                </div>
+        
+                <h2 class="title is-4 has-text-centered">Grass Slope (~10°)</h2>
+                <div class="columns is-centered">
+                <div class="column content has-text-centered">
+                    <video  controls playsinline height="100%" class="rounded-video">
+                    <source src="./img/videos/faceup/getup4.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+                </div>
+            </div> -->
+            <!-- </div> -->
 
-        <!-- <div class="row" style="margin-top: 100px; margin-left: 5px;">
-            <h3 class="col-md-8 col-md-offset-2" style="font-size: 32px; font-weight: bold; text-align:center; margin-bottom: 50px;">
-                External Forces
-            </h3>
-            <div class="text-center" style="column-gap: 40px; line-height: 50px;">
-                <video id="indoor_vision_chair" width="18%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/external-force/t1-external-final.mp4" type="video/mp4" />
-                </video>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <video id="outdoor_vision" width="18%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/external-force/t2-external-mosaic.mp4" type="video/mp4" />
-                </video>
+            <div class="row" style="margin-top: 100px; margin-left: 1px;">
+                <h2 class="col-md-8 col-md-offset-2" style="font-size: 45px; font-weight: bold; text-align:center; margin-bottom: 50px;">
+                    Getting Up From Supine Poses (Lying Facing Up)
+                </h2>
+                <div class="col-md-8 col-md-offset-2">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+                        <!-- Concrete Path -->
+                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Concrete Path</h4>
+                            <video id="getup1" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/faceup/getup2.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <!-- Brick Surfaces -->
+                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Brick Surfaces</h4>
+                            <video id="getup2" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/faceup/getup1.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <!-- Stone Tile -->
+                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Stone Tile</h4>
+                            <video id="getup3" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/faceup/getup3.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <!-- Muddy Grass -->
+                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Muddy Grass</h4>
+                            <video id="getup4" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/faceup/getup5.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <!-- Grass Slope -->
+                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Grass Slope</h4>
+                            <video id="getup5" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/faceup/getup4.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div> -->
+
+            <div class="row" style="margin-top: 100px; margin-left: 1px;">
+                <h2 class="col-md-8 col-md-offset-2" style="font-size: 45px; font-weight: bold; text-align:center; margin-bottom: 50px;">
+                    Rolling Over from Prone Poses (Lying Facing Down)
+                </h2>
+                <div class="col-md-8 col-md-offset-2">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+                        <!-- Concrete Path -->
+                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Concrete Path</h4>
+                            <video id="getup1" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/facedown/roll2.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <!-- Brick Surfaces -->
+                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Brick Surfaces</h4>
+                            <video id="getup2" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/facedown/roll1.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <!-- Stone Tile -->
+                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Stone Tile</h4>
+                            <video id="getup3" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/facedown/roll3.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <!-- Muddy Grass -->
+                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Muddy Grass</h4>
+                            <video id="getup4" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/facedown/roll5.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <!-- Grass Slope -->
+                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Grass Slope</h4>
+                            <video id="getup5" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/facedown/roll4.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         <div class="row" style="margin-top: 100px;">
             <h3 class="col-md-8 col-md-offset-2" style="font-size: 32px; font-weight: bold; text-align:center; margin-bottom: 50px;">
