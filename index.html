@@ -11,7 +11,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Open Graph data  TODO: modify this later-->
     <meta property="og:image" content="img/cover.jpg">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1296">
@@ -89,9 +88,6 @@
                     <li>
                         <sup style="font-size: 20px;">*</sup><font size="5">Equal contribution</font>
                     </li><br>
-                    <!-- <li>
-                        <font size="5">CoRL 2024</font>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -141,13 +137,12 @@
                 <div class="text-center">
                     <div style="position:relative;padding-top:56.25%;">
                         <iframe src="https://www.youtube.com/embed/NPMUlf9soL0?si=wQxkT4AUNXLap2RH" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                        <!-- <div class="poster-image" style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('img/youtube_cover.jpg');background-size:cover;background-position:center;display:block;"></div> -->
             </div>
                     </div>
                 </div>
             </div> <br>
             <div class="col-md-8 col-md-offset-2">
-                    <p class="text-center" style="font-size: 26px;">
+                    <p class="text-center" style="font-size: 21px;">
                     This project presents an RL-based approach that first achieves real-world humanoids getting up from arbitrary lying postures and terrains.
                     </p>
             </div>
@@ -159,7 +154,7 @@
                 <h3 style="font-size: 36px; font-weight: bold; text-align:center">
                     Abstract
                 </h3>
-                <p class="text-justify" style="font-size: 26px;">
+                <p class="text-justify" style="font-size: 20px;">
                     Automatic fall recovery is a crucial prerequisite before humanoid robots can
                     be reliably deployed. Hand-designing controllers for getting up is difficult
                     because of the varied configurations a humanoid can end up in after a fall and
@@ -319,13 +314,11 @@
                     HumanUP: Sim-to-Real Humanoid Getting-Up Policy Learning
                 </h2>
                 <h2 class="col-md-8 col-md-offset-2" style="text-align:left; margin-bottom: 50px;">
-                    <p class="text-justify" style="font-size: 26px;">
+                    <p class="text-justify" style="font-size: 20px;">
                     Our getting-up policy is trained in simulation using two-stage RL training, after which it is directly deployed in the real world. 
                     (a) Stage I learns a discovery policy f that figures out a getting-up trajectory with minimal deployment constraints.
                     (b) Stage II converts the trajectory discovered by Stage I into a policy &pi; that is deployable, robust, and generalizable. 
-                    This policy &pi; is trained by learning to track a slowed down version of the discovered trajectory under strong control regularization on varied terrains and from varied initial poses.
-                    (c) The two-stage training induces a curriculum. Stage I targets motion discovery in easier settings (simpler collision geometry, same starting poses, weak regularization, no variations in terrain), 
-                    while Stage II solves the task of making the learned motion deployable and generalizable. 
+                    (c) The two-stage training induces a curriculum. 
                     </p>
                 </h2>
                 <div style="width: 100%; text-align: center; margin-bottom: 30px; position: relative;">
@@ -346,7 +339,7 @@
                     Motion Comparison between Stage I and Stage II
                 </h2>
                 <h2 class="col-md-8 col-md-offset-2" style="text-align:left; margin-bottom: 50px;">
-                    <p class="text-justify" style="font-size: 26px;">
+                    <p class="text-justify" style="font-size: 20px;">
                     Stage I policy motion is fast and unsafe, while Stage II policy's motion is slower and safer.
                     </p>
                 </h2>
@@ -414,9 +407,10 @@
                     Comparison with Baseline G1 Handcrafted Motion
                 </h2>
                 <h2 class="col-md-8 col-md-offset-2" style="text-align:left; margin-bottom: 50px;">
-                    <p class="text-justify" style="font-size: 26px;">
-                    G1 controller uses a handcrafted motion trajectory, which can be divided into three phases, while our HumanUP learns a continuous and more efficient whole-body getting-up motion.
-                    (a), (b), and (c) record the corresponding mean motor temperature of the upper body, lower body, and waist, respectively. G1's default controller's execution causes the arm motors to heat up significantly, whereas our policy makes more use of the leg motors that are larger (higher torque limit of 83N as opposed to 25N for the arm motors) and thus able to take more load.
+                    <p class="text-justify" style="font-size: 20px;">
+                    <!-- G1 controller uses a handcrafted motion trajectory, which can be divided into three phases, while our HumanUP learns a continuous and more efficient whole-body getting-up motion. -->
+                    (a), (b), and (c) record the corresponding mean motor temperature of the upper body, lower body, and waist, respectively. 
+                    G1's default controller's execution causes the arm motors to heat up significantly, whereas our policy makes more use of the leg motors that are larger (higher torque limit of 83N as opposed to 25N for the arm motors) and thus able to take more load.
                     </p>
                 </h2>
                 <div class="col-md-8 col-md-offset-2">
@@ -447,7 +441,7 @@
                     Failure Modes Analysis
                 </h2>
                 <h2 class="col-md-8 col-md-offset-2" style="text-align:left; margin-bottom: 50px;">
-                    <p class="text-justify" style="font-size: 26px;">
+                    <p class="text-justify" style="font-size: 20px;">
                     G1 controller baseline's handcrafted motion cannot get up from the lying face up on the grass slope, the
                     sloping ground prevents it from getting to the full squatting pose
                     due to high friction and weak waist torques to move against the
@@ -473,7 +467,7 @@
                 </div>
 
                 <div class="col-md-8 col-md-offset-2">
-                        <p class="text-justify" style="font-size: 26px;">
+                        <p class="text-justify" style="font-size: 20px;">
                             On the most challenging terrain, the snowfield, G1 controller baseline's handcrafted motion and ours 
                             may both fail due to the slippery and deformable ground.
                         </p>
