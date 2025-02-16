@@ -361,16 +361,16 @@
                 </h2>
                 <div class="col-md-8 col-md-offset-2">
                     <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
-                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
-                            <h4 style="font-size: 32px; font-weight: bold;">Grass Slope</h4>
-                            <video id="getup1" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
-                                <source src="img/videos/facedown/roll_stand1_mute.mp4" type="video/mp4" />
+                        <div style="width: 25%; text-align: center; margin-bottom: 30px;">
+                            <!-- <h4 style="font-size: 32px; font-weight: bold;">Grass Slope</h4> -->
+                            <video id="rollgetup" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/facedown/roll_stand_mute1.mp4" type="video/mp4" />
                             </video>
                         </div>
             
                         <!-- Brick Surfaces -->
-                        <div style="width: 48%; text-align: center; margin-bottom: 30px;">
-                            <h4 style="font-size: 32px; font-weight: bold;">Grass Slope</h4>
+                        <div style="width: 25%; text-align: center; margin-bottom: 30px;">
+                            <!-- <h4 style="font-size: 32px; font-weight: bold;">Grass Slope</h4> -->
                             <video id="getup2" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
                                 <source src="img/videos/facedown/roll_stand2_mute.mp4" type="video/mp4" />
                             </video>
@@ -379,48 +379,77 @@
                 </div>
             </div>
 
-
-        <div class="row" style="margin-top: 100px;">
-            <h3 class="col-md-8 col-md-offset-2" style="font-size: 32px; font-weight: bold; text-align:center; margin-bottom: 50px;">
-                Sim-to-Sim Performance
-            </h3>
-            <div class="col-md-12 text-center" style="column-gap: 40px; line-height: 30px">
+            <div class="row" style="margin-top: 100px; margin-left: 1px;">
+                <h2 class="col-md-8 col-md-offset-2" style="font-size: 45px; font-weight: bold; text-align:center; margin-bottom: 50px;">
+                    Comparison with Baseline G1 Handcrafted Motion
+                </h2>
+                <h2 class="col-md-8 col-md-offset-2" style="font-size: 20px; font-weight: bold; text-align:left; margin-bottom: 50px;">
+                    G1 controller uses a handcrafted motion trajectory, which can be divided into three phases, while our HumanUP learns a continuous and more efficient whole-body getting-up motion.
+                    (a), (b), and (c) record the corresponding mean motor temperature of the upper body, lower body, and waist, respectively. G1's default controller's execution causes the arm motors to heat up significantly, whereas our policy makes more use of the leg motors that are larger (higher torque limit of 83N as opposed to 25N for the arm motors) and thus able to take more load.
+                </h2>
                 <div class="col-md-8 col-md-offset-2">
-                <p class="text-justify" style="font-size: 16px;">
-                The trained policies are tested in Mujoco.</p></div>
-                <!-- <video id="f2" width="33%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/sim/lowlevel.mp4" type="video/mp4" />
-                </video>
-                <video id="f2" width="33%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/sim/highlevel.mov" type="video/mp4" />
-                </video> -->
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+                        <div style="width: 45%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">G1 Controller Baseline</h4>
+                            <video id="rollgetup" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/faceup/baseline.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <div style="width: 45%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">HumanUP (Ours)</h4>
+                            <video id="getup2" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/faceup/getup1.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div style="width: 100%; text-align: center; margin-bottom: 30px; position: relative;">
+                    <img src="img/comparison.png" alt="comparison" style="width: 65%; border-radius: 12px;">
+                </div>
             </div>
-        </div>
 
-        <div class="row" style="margin-top: 100px;">
-            <h3 class="col-md-8 col-md-offset-2" style="font-size: 32px; font-weight: bold; text-align:center; margin-bottom: 50px;">
-                Failure Cases
-            </h3>
-            <div class="col-md-12 text-center" style="column-gap: 40px; line-height: 50px">
-                    <!-- <div class="col-md-8 col-md-offset-2">
-                    <p class="text-justify" style="font-size: 15px;">
-                The robot may fail due to several reasons, like the failure of the depth perception, the lost of the tracking mask, the inproper design of the Z1 gripper, and also generalization error.<br>
-                </p></div> -->
-                <!-- <video id="f1" width="24%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/failure-case/depth-fail-comp.mp4" type="video/mp4" />
-                </video>&nbsp;&nbsp;&nbsp;&nbsp;
-                <video id="f2" width="24%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/failure-case/tracking-fail-comp.mp4" type="video/mp4" />
-                </video>&nbsp;&nbsp;&nbsp;&nbsp;
-                <video id="f2" width="24%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/failure-case/box-fail-comp.mp4" type="video/mp4" />
-                </video> -->
-                <video id="f1" width="24%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/failure-case/t1-fail1.mp4" type="video/mp4" />
-                </video>&nbsp;&nbsp;&nbsp;&nbsp;
-                <video id="f2" width="24%" style="border-radius: 10px;" autoplay loop muted controls>
-                    <source src="img/videos/failure-case/berkeley-fail1.mp4" type="video/mp4" />
-                </video>
+            <div class="row" style="margin-top: 100px; margin-left: 1px;">
+                <h2 class="col-md-8 col-md-offset-2" style="font-size: 45px; font-weight: bold; text-align:center; margin-bottom: 50px;">
+                    Failure Cases
+                </h2>
+                <h2 class="col-md-8 col-md-offset-2" style="font-size: 20px; font-weight: bold; text-align:left; margin-bottom: 50px;">
+                    G1 controller isn't able to squat on the sloping grass and slips on the slow. Our HumanUP policy is able to partially get up on both the slope and the snow but falls due to unstable feet placement on the slope and slippage on the snow.
+                </h2>
+                <div class="col-md-8 col-md-offset-2">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+                        <div style="width: 45%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">G1 Conrtoller Baseline</h4>
+                            <video id="rollgetup" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/failures/baseline_fail1.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <div style="width: 45%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">HumanUP (Ours)</h4>
+                            <video id="getup2" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/failures/ours_fail2.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+                        <div style="width: 45%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">G1 Conrtoller Baseline</h4>
+                            <video id="rollgetup" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/failures/baseline_fail2.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <div style="width: 45%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">HumanUP (Ours)</h4>
+                            <video id="getup2" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/failures/ours_fail.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         <div class="row" style="margin-top: 100px;">
