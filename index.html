@@ -17,7 +17,7 @@
     <meta property="og:image:width" content="1296">
     <meta property="og:image:height" content="840">
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://lipschitz-constrained-policy.github.io"/>
+    <meta property="og:url" content="https://humanoid-getup.github.io"/>
     <meta property="og:title" content="Learning Getting-Up Policies for Real-World Humanoid Robots" />
     <meta property="og:description" content="This project presents an RL-based approach that first achieves real-world humanoids getting up from arbitrary lying postures and terrains." />
 
@@ -62,35 +62,35 @@
                     </li>
                     <li>
                         <a href="https://runpeidong.web.illinois.edu/" style="font-size: 26px;" rel="noopener noreferrer" target="_blank">
-                         Runpei Dong
+                            Runpei Dong
                         </a>
                         <sup style="font-size: 20px;">*1</sup>
                     </li>
                     <li>
                         <a href="https://zixuan417.github.io" style="font-size: 26px;" rel="noopener noreferrer" target="_blank">
-                         Zixuan Chen
+                            Zixuan Chen
                         </a>
                         <sup style="font-size: 20px;">2</sup>
                     </li>
                     <li>
                         <a href="http://saurabhg.web.illinois.edu" style="font-size: 26px;" rel="noopener noreferrer" target="_blank">
-                          Saurabh Gupta
+                            Saurabh Gupta
                         </a>
                         <sup style="font-size: 24px;">1</sup>
                     </li>
                     <br>
                     <li>
-                        <sup style="font-size: 20px;">2</sup><font size="5">University of Illinois Urbana-Champaign</font>
+                        <sup style="font-size: 20px;">1</sup><font size="5">University of Illinois Urbana-Champaign</font>
                     </li>
                     <li>
-                        <sup style="font-size: 20px;">1</sup><font size="5">Simon Fraser University</font>
+                        <sup style="font-size: 20px;">2</sup><font size="5">Simon Fraser University</font>
                     </li>
                     <br>
                     <li>
                         <sup style="font-size: 20px;">*</sup><font size="5">Equal contribution</font>
                     </li><br>
                     <!-- <li>
-                       <font size="5">CoRL 2024</font>
+                        <font size="5">CoRL 2024</font>
                     </li> -->
                 </ul>
             </div>
@@ -101,7 +101,7 @@
                 <div class="col-md-4 col-md-offset-4 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-                            <a href="" rel="noopener noreferrer" target="_blank">
+                            <a href="https://humanoid-getup.github.io/paper/humanup_paper.pdf" rel="noopener noreferrer" target="_blank">
                             <image src="img/paper-cover.jpeg" height="85px">
                                 <h2><strong>Paper</strong></h2>
                             </a>
@@ -109,11 +109,11 @@
                         <li>
                             <a href="" rel="noopener noreferrer" target="_blank">
                             <image src="img/github.png" height="85px">
-                                <h3><strong>Code</strong></h3>
+                                <h3><strong>Code (Coming Soon)</strong></h3>
                             </a>
                         </li>
                         <li>
-                            <a href="" rel="noopener noreferrer" target="_blank">
+                            <a href="https://www.youtube.com/watch?v=Om0kyBcumuo" rel="noopener noreferrer" target="_blank">
                             <image src="img/youtube_icon.png" height="85px">
                                 <h3><strong>Video</strong></h3>
                             </a>
@@ -379,17 +379,6 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="text-center">
-                        <div style="position:relative;padding-top:56.25%;">
-                            <iframe src="https://www.youtube.com/embed/PTeDBSGjlMs?si=KZIOephLOzfvSP_s" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                            <!-- <div class="poster-image" style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('img/youtube_cover.jpg');background-size:cover;background-position:center;display:block;"></div> -->
-                </div>
-                        </div>
-                    </div>
-                </div> 
-
             <div class="row" style="margin-top: 100px; margin-left: 1px;">
                 <h2 class="col-md-8 col-md-offset-2" style="font-size: 45px; font-weight: bold; text-align:center; margin-bottom: 50px;">
                     HumanUP: Sim-to-Real Humanoid Getting-Up Policy Learning
@@ -404,6 +393,16 @@
                 </h2>
                 <div style="width: 100%; text-align: center; margin-bottom: 30px; position: relative;">
                     <img src="img/humanup.png" alt="comparison" style="width: 65%; border-radius: 12px;">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="text-center">
+                            <div style="position:relative;padding-top:56.25%;">
+                                <iframe src="https://www.youtube.com/embed/PTeDBSGjlMs?si=KZIOephLOzfvSP_s" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                            </div>
+                        </div>
                 </div>
 
                 <h2 class="col-md-8 col-md-offset-2" style="font-size: 35px; font-weight: bold; text-align:center; margin-bottom: 50px;">
@@ -447,6 +446,28 @@
                         </div>
                     </div>
                 </div>
+
+                <h2 class="col-md-8 col-md-offset-2" style="font-size: 35px; font-weight: bold; text-align:center; margin-bottom: 50px;">
+                    Sim2Sim Transfer to MuJoco
+                </h2>
+                <div class="col-md-8 col-md-offset-2">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+                        <div style="width: 45%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Getting Up</h4>
+                            <video id="rollgetup" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/sim/mujoco_getup.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+            
+                        <div style="width: 45%; text-align: center; margin-bottom: 30px;">
+                            <h4 style="font-size: 32px; font-weight: bold;">Rolling Over</h4>
+                            <video id="getup2" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
+                                <source src="img/videos/sim/mujoco_roll.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div class="row" style="margin-top: 100px; margin-left: 1px;">
@@ -532,14 +553,29 @@
         <div class="row" style="margin-top: 100px;">
         </div>
 
-        <section class="section" id="BibTeX">
-            <div class="container content">
-                <h3 class="titile" style="font-family: 'Georgia', 'Times New Roman', serif;">BibTeX</h3>
-                <pre><code>
-                    TBD
-                </code></pre>
+        <section class="hero" id="BibTex">
+            <div class="hero-body-subtitle"  style="display: block">
+                <div class="container is-max-maxwidth">
+                    <h3 class="titile" style="font-size: 42px; font-family: 'Georgia', 'Times New Roman', serif;">BibTeX</h3>
+                    <code style="font-size: 24px;">
+                        @article{humanup25,<br>
+                            &nbsp; title={Learning Getting-Up Policies for Real-World Humanoid Robots},<br>
+                            &nbsp; author={He, Xialin and Dong, Runpei and Chen, Zixuan and Gupta, Saurabh},<br>
+                            &nbsp; journal={arXiv preprint arXiv:2502.xxxxx},<br>
+                            &nbsp; year={2025}<br>
+                        }</code>
+                </div>
             </div>
         </section>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <br><br>
+            <div class="content has-text-centered">
+            <p style="font-size: 30px;">Page template borrowed from <a href="https://nerfies.github.io/" style="font-size: 30px;">Nerfies</a>.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
