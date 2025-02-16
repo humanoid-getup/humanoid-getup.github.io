@@ -381,6 +381,23 @@
 
             <div class="row" style="margin-top: 100px; margin-left: 1px;">
                 <h2 class="col-md-8 col-md-offset-2" style="font-size: 45px; font-weight: bold; text-align:center; margin-bottom: 50px;">
+                    HumanUP: Sim-to-Real Humanoid Getting-Up Policy Learning
+                </h2>
+                <h2 class="col-md-8 col-md-offset-2" style="font-size: 20px; font-weight: bold; text-align:left; margin-bottom: 50px;">
+                    Our getting-up policy is trained in simulation using two-stage RL training, after which it is directly deployed in the real world. 
+                    (a) Stage I learns a discovery policy $f$ that figures out a getting-up trajectory with minimal deployment constraints.
+                    (b) Stage II converts the trajectory discovered by Stage I into a policy &pi; that is deployable, robust, and generalizable. 
+                    This policy &pi; is trained by learning to track a slowed down version of the discovered trajectory under strong control regularization on varied terrains and from varied initial poses.
+                    (c) The two-stage training induces a curriculum. Stage I targets motion discovery in easier settings (simpler collision geometry, same starting poses, weak regularization, no variations in terrain), 
+                    while Stage II solves the task of making the learned motion deployable and generalizable. 
+                </h2>
+                <div style="width: 100%; text-align: center; margin-bottom: 30px; position: relative;">
+                    <img src="img/humanup.png" alt="comparison" style="width: 65%; border-radius: 12px;">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 100px; margin-left: 1px;">
+                <h2 class="col-md-8 col-md-offset-2" style="font-size: 45px; font-weight: bold; text-align:center; margin-bottom: 50px;">
                     Comparison with Baseline G1 Handcrafted Motion
                 </h2>
                 <h2 class="col-md-8 col-md-offset-2" style="font-size: 20px; font-weight: bold; text-align:left; margin-bottom: 50px;">
@@ -412,10 +429,13 @@
 
             <div class="row" style="margin-top: 100px; margin-left: 1px;">
                 <h2 class="col-md-8 col-md-offset-2" style="font-size: 45px; font-weight: bold; text-align:center; margin-bottom: 50px;">
-                    Failure Cases
+                    Failure Modes Analysis
                 </h2>
                 <h2 class="col-md-8 col-md-offset-2" style="font-size: 20px; font-weight: bold; text-align:left; margin-bottom: 50px;">
-                    G1 controller isn't able to squat on the sloping grass and slips on the slow. Our HumanUP policy is able to partially get up on both the slope and the snow but falls due to unstable feet placement on the slope and slippage on the snow.
+                    G1 controller baseline's handcrafted motion cannot get up from the lying face up on the grass slope, the
+                    sloping ground prevents it from getting to the full squatting pose
+                    due to high friction and weak waist torques to move against the
+                    dumping tendency.
                 </h2>
                 <div class="col-md-8 col-md-offset-2">
                     <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
@@ -427,13 +447,17 @@
                         </div>
             
                         <div style="width: 45%; text-align: center; margin-bottom: 30px;">
-                            <h4 style="font-size: 32px; font-weight: bold;">HumanUP (Ours)</h4>
+                            <h4 style="font-size: 32px; font-weight: bold;">G1 Controller Baseline</h4>
                             <video id="getup2" width="100%" style="border-radius: 10px;" autoplay loop muted controls>
-                                <source src="img/videos/failures/ours_fail2.mp4" type="video/mp4" />
+                                <source src="img/videos/failures/baseline_fail3.mp4" type="video/mp4" />
                             </video>
                         </div>
                     </div>
 
+                    <h2 style="font-size: 20px; font-weight: bold; text-align:left; margin-bottom: 50px;">
+                        On the most challenging terrain, the snowfield, G1 controller baseline's handcrafted motion and ours 
+                        may both fail due to the slippery and deformable ground.
+                    </h2>
                     <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
                         <div style="width: 45%; text-align: center; margin-bottom: 30px;">
                             <h4 style="font-size: 32px; font-weight: bold;">G1 Conrtoller Baseline</h4>
